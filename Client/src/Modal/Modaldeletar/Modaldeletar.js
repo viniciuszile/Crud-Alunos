@@ -23,6 +23,7 @@ const ModalDeletar = () => {
     api.delete(matricula.deletar_matricula).then(({ data }) => {
       console.log(data);
       alert("Aluno deletado do banco");
+      document.location.reload(false);
     });
   };
 

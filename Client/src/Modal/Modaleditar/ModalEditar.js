@@ -26,6 +26,7 @@ const ModalEditar = () => {
       .then(({ data }) => {
         console.log(data);
         alert("Informações alteradas no banco");
+        document.location.reload(false);
       });
   };
 

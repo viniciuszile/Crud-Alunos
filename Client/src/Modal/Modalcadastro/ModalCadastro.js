@@ -3,16 +3,22 @@ import { Button, Modal } from "react-bootstrap";
 import api from "../../Componentes/Api/api";
 import "./ModalCadastro.css";
 
+
 const ModalCadastro = () => {
   const [values, setValues] = useState("");
   const [modal, setModal] = useState(false);
 
+
+  
   const dadosInputs = (value) => {
     setValues((prevValue) => ({
       ...prevValue,
       [value.target.name]: value.target.value,
     }));
   };
+
+  // console.log(values)
+
 
   const CadastrarAluno = () => {
     api
@@ -25,6 +31,8 @@ const ModalCadastro = () => {
       .then((response) => {
         console.log(response);
         alert("Aluno cadastrado no banco");
+        document.location.reload(false);
+
       });
   };
 
@@ -47,7 +55,7 @@ const ModalCadastro = () => {
               <label>Nome</label>
               <br />
               <input
-                className="input-cadastrar"
+                className="input-Nome"
                 name="nome"
                 type="text"
                 placeholder="Informe o nome"
@@ -58,7 +66,7 @@ const ModalCadastro = () => {
               <label>Matricula</label>
               <br />
               <input
-                className="input-cadastrar"
+                className="input-Matricula"
                 name="matricula"
                 type="text"
                 placeholder="Informe o N da matricula"
@@ -70,7 +78,7 @@ const ModalCadastro = () => {
               <label>Turma</label>
               <br />
               <input
-                className="input-cadastrar"
+                className="input-Turma"
                 name="turma"
                 type="text"
                 placeholder="informe a Turma"
@@ -82,7 +90,7 @@ const ModalCadastro = () => {
               <label>Nota</label>
               <br />
               <input
-                className="input-cadastrar"
+                className="input-Nota"
                 name="nota"
                 type="text"
                 placeholder="infome a nota do aluno"
